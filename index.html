@@ -13,16 +13,18 @@
 			<div>Name: {{featureProduct.name}}</div>
 			<div>Price: {{featureProduct.price | number:2}}</div>
 		</div>
+		<br>
 		<div>Add New Product</div>
 		<form>
 			<label for="productname">Product Name</label>
-			<input type="text" 
-				name="productname" 
+			<br>
+			<input type="text"
+				name="productname"
 				placeholder="Product Name"
 				ng-model="myInputName"
 			>
-			<input type="text" 
-				name="productprice" 
+			<input type="text"
+				name="productprice"
 				placeholder="Product Price"
 				ng-model="myInputPrice"
 			>
@@ -33,6 +35,8 @@
 		<div ng-repeat="product in products">
 			{{product.name}}
 			{{product.price}}
+			<!-- {{product.featured}} -->
+			<input type="checkbox" ng-model="product.featured" ng-click="featureIt(product)">
 		</div>
 
 	</div>
@@ -44,9 +48,9 @@
 	<!-- libraries -->
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
-	
+
 	<!-- application files (order matters) -->
-	<script src="app.js"></script> 
+	<script src="app.js"></script>
 
 </body>
 </html>
